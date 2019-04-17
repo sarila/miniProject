@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Dashboard</title>
+</head>
+<body>
+	<!-- <img src="/" title="Photo"> -->
+	<% users. forEach(function(user, i) { %>
+	<div class="user">
+		<p><b><%= user.username %></b><br/><br/> <%= user.email %><br/><%= user.phone %></p>
+	</div>
+ <%	}) %>
+</body>
+</html>
