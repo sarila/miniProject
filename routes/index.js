@@ -26,12 +26,11 @@ router.post('/signup', function(req, res){
 	var promise = user.save()
 	promise.then((user) => {
 		console.log('user signed up with values', user);
-		Users.find().exec(function(err, users){
+		Users.findOne().exec(function(err, users){
 			res.render('dashboard', {users})
 		});
 	});
 });
-
 router.post('/login', function(req, res){
 	if(req.body.username && req.body.password) {
 		Users.find({username: req.body.username, password: req.body.password}, function(err, user){
@@ -43,8 +42,27 @@ router.post('/login', function(req, res){
 	 }
 });
 
+
+// router.post('/login', function(req, res){
+// 	if(req.body.username && req.body.password) {
+// 		var id = req.body.username;
+// 		Users.find({username: req.body.username, password: req.body.password}, function(err, user){
+// 		console.log('user loged in....',user);
+// 		res.redirect('dashboard/' + id);
+// 	})
+// 	} else {
+// 		console.log('reenter username and password');
+// 	 }
+// });
+
+// router.get('/dashboard/:id', function(req, res){
+// 	Users.findById(req.params.id).then(console.log('user found'));
+// 	res.render('dashboard', {users:req.params.username})
+// });
+
+
 router.get('/dashboard', function(req, res){
-	Users.find().exec(function(err, users){
+	Users.findOne().exec(function(err, users){
 		res.render('dashboard', {users})
 	})
 });

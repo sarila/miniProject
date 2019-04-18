@@ -2,18 +2,21 @@
 <html>
 <head>
 	<title> signup </title>
+	<link rel='stylesheet' href='/stylesheets/style.css' />
 </head>
 <body>
-	<fieldset><legend>Sign up</legend>
-		<form method="post" action="/signup">
-			  name:<input type="text" name="username" id="nameInput"> <br/>
-			  password:<input type="password" name="password" id="passwordInput"> <br/>
-			  confirm password:<input type="password" name="confirmPassword" id="confirmPassword">
-			  email:<input type="email" name="email" id="emailInput"><br/>
-			  phone:<input type="text" name="phone"id="phoneInput"><br/>
-			  <a href="/dashboard"><button type="submit">SignUp</button></a> </br>
-	    </form>
-	</fieldset>
-	
+	<div class="signup">
+	  <fieldset><legend>Sign up</legend>
+	    <form method="post" action="/signup">
+	        <input placeholder="UserName" type="text" name="username" id="nameInput"> <br/>
+	       <input placeholder="Password" type="password" name="password" id="passwordInput"> <br/>
+	        <input placeholder="ConfirmPassword" type="password" name="confirmPassword" id="confirmPassword">
+	        <input placeholder="Email" type="email" name="email" id="emailInput"><br/>
+	        <input placeholder="Phone Number" type="text" name="phone"id="phoneInput"><br/>
+	        <a href="/dashboard"><button type="submit">SignUp</button></a> </br>
+	      </form>
+	  </fieldset>
+
+	 </div>	
 </body>
 </html>

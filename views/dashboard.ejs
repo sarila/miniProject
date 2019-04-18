@@ -2,13 +2,24 @@
 <html>
 <head>
 	<title>Dashboard</title>
+	<link rel='stylesheet' href='/stylesheets/style.css' />
 </head>
 <body>
 	<img src="images/user.png" title="Photo"> 
-	<% users. forEach(function(user, i) { %>
-	<div class="user">
-		<p><b><%= user.username %></b><br/><br/> <%= user.email %><br/><%= user.phone %></p>
-	</div>
- <%	}) %>
+	<table border="1">
+		<thead>
+			<tr bgcolor="#808080">
+				<td>username</td><td>email</td><td>Phone number</td>
+			</tr>
+		</thead>
+		<tbody>
+			<tr bgcolor="#808080">
+				<td><%= users.username %></td>
+				 <td><%= users.email %></td> 
+				<td><%= users.phone %></td> 
+			</tr>
+		</tbody>
+	</table>
+	
 </body>
 </html>

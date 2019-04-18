@@ -1,8 +1,68 @@
 body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-color: #000;
+  background-image: url('../images/back6.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;  
 }
 
-a {
-  color: #00B7FF;
+p {
+	text-decoration-color: #ff0000;
+	align-self: right;
+	font-size: 30px;
+
 }
+
+input {
+    width: 80%;
+    padding: 15px 12px;
+    margin: 10px 5px;
+    box-sizing: border-box; 
+    font-size: 20px; 
+}
+
+button{
+    background-color: #c5d1e5;
+    border: none;
+    color: white;
+    padding: 12px 36px;
+    text-decoration: none;
+    margin: 5px 4px;
+    font-size: 20px; 
+    cursor: pointer;  
+}
+
+.login{
+	width: 500px;
+	background-color: transparent;
+	float: top;
+	margin: 20px;
+	font-size: 40px;
+	color: #30042f;
+	border-radius: 20px 20px 20px 20px;
+	padding: 10px;
+	background-size: cover;
+	position: relative;
+}
+
+.title{
+  text-align: center;
+  font-size: 80px;
+  color: #000000;
+  position: absolute;
+}
+
+.signup{
+	width: 500px;
+	float: right;
+	margin: 20px;
+	font-size: 40px;
+	color: #30042f;
+	border-radius: 20px 20px 20px 20px;
+	padding: 10px;
+	background-size: cover;
+	position: relative;
+}
+

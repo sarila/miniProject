@@ -2,13 +2,19 @@
 <html>
 <head>
 	<title> login </title>
+	<link rel='stylesheet' href='/stylesheets/style.css' />
 </head>
-<body><fieldset><legend>Login</legend>
-	<form method="post" action="/login">
-		name:<input type="text" name="username" id="nameInput"> <br/>
-		password:<input type="password" name="password" id="passwordInput"> <br/>
-		<button type="submit"> Login</button> </br>
-    </form>
-</fieldset>
+<body>
+	<div class="login">
+		<fieldset>
+			<legend>Login</legend>
+				<form method="post" action="/login">
+					<p>Name:</p><input type="text" name="username" id="nameInput"> <br/>
+					<p>Password:</p><input type="password" name="password" id="passwordInput"> <br/>
+					<button type="submit"> Login</button> </br>
+			    </form>
+		</fieldset>
+	</div>
+	
 </body>
 </html>
