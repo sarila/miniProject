@@ -65,4 +65,18 @@ button{
 	background-size: cover;
 	position: relative;
 }
+tr{
+  padding: 12px 36px;
+  text-decoration: none;
+  margin: 5px 4px;
+  font-size: 20px;
+  background-color: #cbd19c;
+}
+td{
+  padding: 12px 36px;
+  text-decoration: none;
+  margin: 5px 4px;
+  font-size: 20px;
+  background-color: #cbd19c;
+}
 
