@@ -2,6 +2,25 @@ var express = require('express');
 var router = express.Router();
 var Users = require('../models/users');
 
+const nodemailer = require('nodemailer');
+const smtpTransport = require('nodemailer-smtp-transport');
+
+const transporter = nodemailer.createTransport(smtpTransport({
+  service: 'gmail',
+  host: 'smtp.gmail.com',
+  auth: {
+		user: 'ngakhusisarila@gmail.com',
+		pass: 'password'
+  }
+}));
+
+var mailOptions = {
+  from: 'ngakhusisarila@gmail.com',
+  to: 'sarila@gmail.com',
+  subject: 'Sending Email using Node.js',
+  text: 'Thnakyou for signing up.'
+};
+
 /* GET home page. */
 router.get('/', function(req, res, next) {
   res.render('index', { title: 'Project' });
@@ -23,6 +42,20 @@ router.post('/signup', function(req, res){
 		email: req.body.email,
 		phone: req.body.phone
 	});
+	let mailOptions = {
+			from: 'ngakhusisarila@gmail.com',
+		  to: req.body.email,
+		  subject: 'Welcome to Recipe box',
+		  text: `Hello ${req.body.username}, You have signed up.Thank You.`
+		}
+		transporter.sendMail(mailOptions, function(error, info){
+			if (error) {
+				console.log(error);
+			} else {
+				console.log('Email sent: ' + info.response);
+			}
+		});
+		
 	var promise = user.save()
 	promise.then((user) => {
 		console.log('user signed up with values', user);
@@ -31,6 +64,8 @@ router.post('/signup', function(req, res){
 		});
 	});
 });
+
+
 router.post('/login', function(req, res){
 	if(req.body.username && req.body.password) {
 		Users.find({username: req.body.username, password: req.body.password}, function(err, user){
